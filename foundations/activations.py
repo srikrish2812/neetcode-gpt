@@ -8,6 +8,7 @@ class Solution:
         # z is a 1D NumPy array
         # Formula: 1 / (1 + e^(-z))
         # return np.round(your_answer, 5)
+        z= np.clip(z, -500, 500)
         ans = 1/(1+np.exp(-z))
         return np.round(ans,5)
 
