@@ -21,5 +21,7 @@ class Solution:
         # return round(your_answer, 4)
         eps = 1e-7
         y_pred = np.clip(y_pred, eps, 1-eps)
+        # axis=1 sums in the inner dimension that is column
+        # axis=0 is across rows
         loss= -np.mean((np.sum(y_true*np.log(y_pred), axis=1)))
         return np.round(loss,4)
